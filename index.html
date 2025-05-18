@@ -3,73 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cursos de Postres Artesanales</title>
+  <title>Pastry by Denise - Quesillo Pro</title>
   <style>
+    /* Paleta lila y beige */
+    :root {
+      --color-lila: #7e57c2;
+      --color-lila-claro: #b39ddb;
+      --color-beige: #f5f0e6;
+      --color-beige-oscuro: #c7b99a;
+      --color-texto: #4a3c6e;
+      --color-blanco: #ffffff;
+      --color-boton: #9575cd;
+      --color-boton-hover: #673ab7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f8f8f8;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--color-beige);
+      color: var(--color-texto);
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
-    h1 {
-      text-align: center;
-      color: #d2691e;
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--color-lila);
+      color: var(--color-blanco);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
-    .curso {
-      background: white;
-      padding: 20px;
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      cursor: default;
+    }
+
+    nav a {
+      color: var(--color-blanco);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--color-lila-claro);
+    }
+
+    main {
+      padding: 90px 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* Sección Inicio */
+    #inicio h2 {
+      font-size: 2.2rem;
+      color: var(--color-lila);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    #inicio p {
+      font-size: 1.15rem;
+      color: var(--color-texto);
+      max-width: 650px;
+    }
+
+    /* Sección Cursos */
+    #cursos h2 {
+      font-size: 2rem;
+      color: var(--color-lila);
       margin-bottom: 20px;
-      border-radius: 6px;
-      box-shadow: 0 0 8px #ccc;
+      font-weight: 700;
     }
-    .curso h2 {
-      margin-top: 0;
-      color: #a0522d;
+    #cursos .curso {
+      background: var(--color-blanco);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(126, 87, 194, 0.2);
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
     }
-    .precio {
-      font-size: 1.2em;
-      margin: 10px 0;
-      font-weight: bold;
-      color: #444;
+    #cursos .curso h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: var(--color-lila-oscuro);
     }
-    #paypal-button-container {
-      margin-top: 20px;
+    #cursos .curso p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: var(--color-texto);
+      line-height: 1.4;
+    }
+    #cursos .precio {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--color-lila);
+    }
+
+    /* Botón PayPal */
+    .boton-pago {
+      display: inline-block;
+      background-color: var(--color-boton);
+      color: var(--color-blanco);
+      padding: 14px 35px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(126, 87, 194, 0.3);
+    }
+    .boton-pago:hover {
+      background-color: var(--color-boton-hover);
+      box-shadow: 0 6px 12px rgba(103, 58, 183, 0.5);
+    }
+
+    /* Sección Contacto */
+    #contacto h2 {
+      font-size: 2rem;
+      color: var(--color-lila);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+    #contacto p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--color-texto);
+      margin-bottom: 15px;
+    }
+    #contacto .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 3px 7px rgba(37, 211, 102, 0.5);
+      transition: background-color 0.3s;
+    }
+    #contacto .btn-whatsapp:hover {
+      background-color: #1ebe57;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: var(--color-lila);
+      color: var(--color-blanco);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        padding: 12px 15px;
+      }
+      nav a {
+        margin: 10px 10px 0 0;
+      }
+      main {
+        padding: 100px 15px 40px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Cursos de Postres Artesanales</h1>
-  <div class="curso">
-    <h2>Curso Básico de Galletas</h2>
-    <p>Aprende a hacer deliciosas galletas artesanales con relleno.</p>
-    <div class="precio">$15 USD</div>
-    <div id="paypal-button-container"></div>
-  </div>
 
-  <!-- Cargar SDK de PayPal -->
-  <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
-  <script>
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '15.00' // Precio del curso
-            }
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-          alert('Pago completado. Gracias, ' + details.payer.name.given_name + '!');
-          // Aquí puedes redirigir a la página del curso o enviar un email, etc.
-        });
-      },
-      onError: function(err) {
-        alert('Error en el pago: ' + err);
-      }
-    }).render('#paypal-button-container');
-  </script>
+  <header>
+    <h1>Pastry by Denise</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Bienvenidas a Pastry by Denise</h2>
+      <p>
+        Pastry by Denise nace del corazón de una maestra pastelera, ama de casa y emprendedora que entiende los retos de ser mamá y soñar en grande. A través de mis cursos y asesorías, acompaño a mujeres que desean emprender en el mundo de la pastelería desde casa, con recetas probadas, técnicas sencillas y resultados que enamoran.<br><br>
+        Mi misión es ayudarte a convertir tu pasión en un negocio dulce y rentable.
+      </p>
+    </section>
+
+    <section id="cursos">
+      <h2>Curso destacado</h2>
+      <div class="curso">
+        <h3>Quesillo Pro: Textura, Sabor y Técnica para Vender</h3>
+        <p>Domina el arte del quesillo venezolano con esta receta profesional. Aprende paso a paso cómo lograr la textura perfecta y sabores irresistibles para emprender con éxito.</p>
+        <div class="precio">$25 USD</div>
+        <a href="https://paypal.me/denisserr/25" target="_blank" class="boton-pago" rel="noopener noreferrer">Comprar ahora</a>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>¿Tienes preguntas o quieres asesorías personalizadas? Escríbeme por WhatsApp:</p>
+      <p style="text-align:center;">
+        <a href="https://wa.me/tuNumeroAqui" target="_blank" class="btn-whatsapp" rel="noopener noreferrer">Enviar mensaje</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Pastry by Denise. Todos los derechos reservados.
+  </footer>
+
 </body>
 </html>
