@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursos de Postres Artesanales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f8f8f8;
+    }
+    h1 {
+      text-align: center;
+      color: #d2691e;
+    }
+    .curso {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    .curso h2 {
+      margin-top: 0;
+      color: #a0522d;
+    }
+    .precio {
+      font-size: 1.2em;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #444;
+    }
+    #paypal-button-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cursos de Postres Artesanales</h1>
+  <div class="curso">
+    <h2>Curso Básico de Galletas</h2>
+    <p>Aprende a hacer deliciosas galletas artesanales con relleno.</p>
+    <div class="precio">$15 USD</div>
+    <div id="paypal-button-container"></div>
+  </div>
+
+  <!-- Cargar SDK de PayPal -->
+  <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '15.00' // Precio del curso
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Pago completado. Gracias, ' + details.payer.name.given_name + '!');
+          // Aquí puedes redirigir a la página del curso o enviar un email, etc.
+        });
+      },
+      onError: function(err) {
+        alert('Error en el pago: ' + err);
+      }
+    }).render('#paypal-button-container');
+  </script>
+</body>
+</html>
