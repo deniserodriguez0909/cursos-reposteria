@@ -4,221 +4,233 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pastry by Denise</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <style>
-    :root {
-      --color-lila: #ab69560;
-      --color-beige: #fbf1e9;
-      --color-texto: #4a3c6e;
-      --color-blanco: #ffffff;
-      --color-boton: #ab69560;
-      --color-boton-hover: #a388d4;
-    }
-
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: var(--color-beige);
-      color: var(--color-texto);
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
     }
-
     header {
+      background-color: #f3d9ff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 60px 10%;
-      background-color: var(--color-lila);
-      background-image: url('https://https://www.pexels.com/es-es/buscar/FLAN/');
-      background-size: cover;
-      background-position: center;
-      color: var(--color-blanco);
-      position: relative;
+      padding: 15px 30px;
     }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(179, 157, 219, 0.7);
-      z-index: 0;
-    }
-
-    header .contenido {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1;
-      position: relative;
-      width: 100%;
-    }
-
-    header .texto {
-      max-width: 50%;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .boton {
-      background-color: var(--color-boton);
-      color: var(--color-blanco);
-      padding: 12px 30px;
-      border-radius: 30px;
+    header nav a {
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      color: #000;
+      font-weight: bold;
     }
-
-    .boton:hover {
-      background-color: var(--color-boton-hover);
-    }
-
-    header img {
-      max-width: 45%;
-      border-radius: 12px;
-    }
-
-    section {
-      padding: 60px 10%;
-    }
-
-    .cursos {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .curso {
-      background: var(--color-blanco);
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .curso h3 {
-      margin-top: 0;
-    }
-
-    .curso p {
-      font-size: 0.95rem;
-    }
-
-    .destacado {
+    .hero {
+      background-color: #f3d9ff;
       display: flex;
       align-items: center;
-      gap: 40px;
+      padding: 50px;
       flex-wrap: wrap;
     }
-
-    .destacado .texto {
-      flex: 1;
-    }
-
-    .destacado img {
-      max-width: 400px;
+    .hero .left img {
+      width: 300px;
       border-radius: 10px;
     }
-
-    footer {
-      background: var(--color-lila);
-      color: var(--color-blanco);
+    .hero .right {
+      margin-left: 50px;
+      max-width: 500px;
+    }
+    .hero h1 {
+      font-family: 'Georgia', serif;
+      color: #6b2e7a;
+      font-size: 48px;
+    }
+    .hero h1 span {
+      font-family: 'Cursive', cursive;
+      color: #4b0055;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .courses {
+      padding: 50px 30px;
       text-align: center;
-      padding: 30px 10%;
     }
-
-    footer nav a {
-      color: var(--color-blanco);
-      margin: 0 10px;
+    .courses h2 {
+      color: #6b2e7a;
+    }
+    .course-section {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f3d9ff;
+      padding: 30px 0;
+      flex-wrap: wrap;
+    }
+    .course {
+      width: 30%;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+    .course img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .course h3 {
+      color: #6b2e7a;
+      margin: 10px 0;
+    }
+    .course form {
+      margin-top: 10px;
+    }
+    .cta {
+      background-color: #f3d9ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 30px;
+      flex-wrap: wrap;
+    }
+    .cta img {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .cta .info {
+      max-width: 500px;
+    }
+    .cta h2 {
+      color: #6b2e7a;
+    }
+    .cta form,
+    .cta a {
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .cta input[type="submit"],
+    .cta a {
+      background-color: #6b2e7a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
       text-decoration: none;
+      margin-right: 10px;
+      cursor: pointer;
     }
-
-    footer .social a {
-      margin: 0 10px;
-      color: var(--color-blanco);
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffffff;
+      color: #6b2e7a;
     }
   </style>
 </head>
 <body>
+
+  <!-- Barra de navegación -->
   <header>
-    <div class="contenido">
-      <div class="texto">
-        <h1>Pastry by Denise</h1>
-        <p>Forma parte de una comunidad de mujeres que convierten su pasión por la pastelería en un negocio exitoso desde casa. ¡Empieza hoy mismo!</p>
-        <a href="#cursos" class="boton">Ver Cursos</a>
-      </div>
-      <img src="https://images.unsplash.com/photo-1606851091909-030b46cbb63b?auto=format&fit=crop&w=600&q=80" alt="Imagen de repostería">
+    <nav>
+      <a href="#">Nosotros</a>
+      <a href="#">Servicios</a>
+      <a href="#">Blog</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <div>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
     </div>
   </header>
 
-  <section id="cursos">
-    <h2>Cursos disponibles</h2>
-    <div class="cursos">
-      <div class="curso">
-        <h3>Quesillo Pro</h3>
-        <p>Aprende a preparar el quesillo venezolano perfecto y convierte esta receta en tu producto estrella.</p>
-        <a class="boton" href="https://paypal.me/denisserr/25">Comprar $25</a>
-      </div>
-      <div class="curso">
-        <h3>Panes Rellenos</h3>
-        <p>Descubre cómo hacer panes suaves y sabrosos con rellenos irresistibles, ideales para vender o disfrutar en casa.</p>
-        <a class="boton" href="https://paypal.me/denisserr">Comprar</a>
-      </div>
-      <div class="curso">
-        <h3>Cálculo de Costos</h3>
-        <p>Aprende a calcular precios y márgenes para asegurar ganancias reales en tu negocio pastelero.</p>
-        <a class="boton" href="https://paypal.me/denisserr">Comprar</a>
-      </div>
+  <!-- Sección principal -->
+  <section class="hero">
+    <div class="left">
+      <img src="imagen-reposteria.jpg" alt="Repostería" />
+    </div>
+    <div class="right">
+      <h1>Pastry by <span>Denise</span></h1>
+      <p>Aprende a emprender con nuestros cursos de repostería</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tucorreo@paypal.com">
+        <input type="hidden" name="item_name" value="Curso Completo de Repostería">
+        <input type="hidden" name="amount" value="60.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="¡Compra Ahora!">
+      </form>
     </div>
   </section>
 
-  <section>
-    <div class="destacado">
-      <div class="texto">
-        <h2>Transforma tu pasión en ingresos</h2>
-        <p>No necesitas tener un local ni invertir miles de dólares. Solo necesitas una receta ganadora, las herramientas adecuadas y el conocimiento correcto. Con mis cursos, podrás lograrlo paso a paso.</p>
-        <a href="https://paypal.me/denisserr/25" class="boton">Quiero Empezar</a>
-      </div>
-      <img src="https://images.unsplash.com/photo-1589308078056-f92da55a8f5b?auto=format&fit=crop&w=600&q=80" alt="Repostería">
+  <!-- Sección de cursos -->
+  <section class="courses">
+    <h2>Nuestros Cursos para Emprender</h2>
+  </section>
+
+  <section class="course-section">
+    <!-- Curso 1 -->
+    <div class="course">
+      <img src="quesillos.jpg" alt="Quesillos Pro" />
+      <h3>Quesillos Pro</h3>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tucorreo@paypal.com">
+        <input type="hidden" name="item_name" value="Curso Quesillos Pro">
+        <input type="hidden" name="amount" value="25.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Inscribirme">
+      </form>
+    </div>
+
+    <!-- Curso 2 -->
+    <div class="course">
+      <img src="panes-rellenos.jpg" alt="Panes Rellenos" />
+      <h3>Panes Rellenos</h3>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tucorreo@paypal.com">
+        <input type="hidden" name="item_name" value="Curso Panes Rellenos">
+        <input type="hidden" name="amount" value="20.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Inscribirme">
+      </form>
+    </div>
+
+    <!-- Curso 3 -->
+    <div class="course">
+      <img src="calculo-costos.jpg" alt="Cálculo de Costos" />
+      <h3>Cálculo de Costo y Ganancias</h3>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tucorreo@paypal.com">
+        <input type="hidden" name="item_name" value="Curso Cálculo de Costos">
+        <input type="hidden" name="amount" value="15.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Inscribirme">
+      </form>
     </div>
   </section>
 
-  <section>
-    <div class="curso">
-      <h2>Curso destacado: Quesillo Pro</h2>
-      <p>Accede a una receta profesional y técnicas probadas para lograr el mejor quesillo. Ideal para vender o sorprender.</p>
-      <a class="boton" href="https://paypal.me/denisserr/25">Inscribirme Ahora</a>
-      <br><br>
-      <a class="boton" href="https://wa.me/593995050082">Hablar por WhatsApp</a>
+  <!-- Sección final con llamado a la acción -->
+  <section class="cta">
+    <img src="imagen-final.jpg" alt="Curso final" />
+    <div class="info">
+      <h2>¿Estás lista para comenzar?</h2>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tucorreo@paypal.com">
+        <input type="hidden" name="item_name" value="Curso Completo Pack Emprendedora">
+        <input type="hidden" name="amount" value="60.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Compra Ahora">
+      </form>
+      <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+      <a href="#">Instagram</a>
     </div>
   </section>
 
   <footer>
-    <p>Contacto: pastrybydenise@gmail.com</p>
-    <div class="social">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">YouTube</a>
-    </div>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#cursos">Cursos</a>
-      <a href="#">Contacto</a>
-    </nav>
+    © 2025 Pastry by Denise. Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
-
